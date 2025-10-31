@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Santana Adesivos - Soluções Visuais de Alta Qualidade</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <style>
         :root {
-            --primary: #2563eb;
-            --secondary: #1e40af;
-            --accent: #f59e0b;
+            --primary: #2e86c7;
+            --secondary: #77b7e6;
+            --accent: #ffffff;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
-        
+
         body {
             overflow-x: hidden;
         }
-        
+
         .hero-bg {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1926&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1926&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
-        
+
+        .header-transparent {
+            background: transparent;
+        }
+
         .header-scrolled {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
-        
+
         .service-card {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             background: linear-gradient(145deg, #ffffff, #f5f7fa);
@@ -47,7 +53,7 @@
             overflow: hidden;
             position: relative;
         }
-        
+
         .service-card::before {
             content: '';
             position: absolute;
@@ -55,70 +61,86 @@
             left: 0;
             width: 100%;
             height: 5px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             transform: scaleX(0);
             transition: transform 0.4s ease;
         }
-        
+
         .service-card:hover::before {
             transform: scaleX(1);
         }
-        
+
         .service-card:hover {
             transform: translateY(-15px) scale(1.02);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
-        
+
         .service-icon {
             transition: all 0.5s ease;
         }
-        
+
         .service-card:hover .service-icon {
             transform: scale(1.2) rotate(5deg);
             color: var(--primary);
         }
-        
+
         .highlighted-service {
-            border: 2px solid var(--accent);
+            border: 2px solid var(--primary);
             position: relative;
             overflow: hidden;
-            background: linear-gradient(135deg, #ffffff 0%, #fef9e7 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
         }
-        
+
         .highlighted-service::before {
             content: "Mais Procurado";
             position: absolute;
             top: 15px;
             right: -35px;
-            background: var(--accent);
+            background: var(--primary);
             color: white;
             padding: 6px 35px;
             font-size: 12px;
             font-weight: 600;
             transform: rotate(45deg);
-            box-shadow: 0 2px 10px rgba(245, 158, 11, 0.3);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
-        
+
         .floating {
             animation: floating 3s ease-in-out infinite;
         }
-        
+
         @keyframes floating {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
         }
-        
+
         .pulse {
             animation: pulse 2s infinite;
         }
-        
+
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
-        
+
         .gallery-item {
             position: relative;
             overflow: hidden;
@@ -127,20 +149,20 @@
             opacity: 0;
             transition: all 0.6s ease;
         }
-        
+
         .gallery-item.visible {
             transform: translateY(0);
             opacity: 1;
         }
-        
+
         .gallery-item img {
             transition: transform 0.5s ease;
         }
-        
+
         .gallery-item:hover img {
             transform: scale(1.1);
         }
-        
+
         .gallery-overlay {
             position: absolute;
             bottom: 0;
@@ -152,16 +174,17 @@
             transform: translateY(100%);
             transition: transform 0.4s ease;
         }
-        
+
         .gallery-item:hover .gallery-overlay {
             transform: translateY(0);
         }
-        
+
         .nav-link {
             position: relative;
             padding: 5px 0;
+            transition: color 0.3s ease;
         }
-        
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -172,18 +195,18 @@
             background: var(--primary);
             transition: width 0.3s ease;
         }
-        
+
         .nav-link:hover::after {
             width: 100%;
         }
-        
+
         .btn-primary {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
-        
+
         .btn-primary::before {
             content: '';
             position: absolute;
@@ -191,25 +214,25 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s ease;
         }
-        
+
         .btn-primary:hover::before {
             left: 100%;
         }
-        
+
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
-        
+
         .section-title {
             position: relative;
             display: inline-block;
             margin-bottom: 20px;
         }
-        
+
         .section-title::after {
             content: '';
             position: absolute;
@@ -217,61 +240,73 @@
             left: 0;
             width: 60px;
             height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             border-radius: 2px;
         }
-        
+
         .text-gradient {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        
+
         .counter {
             font-size: 3rem;
             font-weight: 700;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
+        .logo-img {
+            transition: all 0.3s ease;
+            height: 50px;
+            width: auto;
+        }
     </style>
 </head>
+
 <body class="bg-gray-50">
     <!-- Header/Navbar -->
-    <header class="fixed w-full z-50 transition-all duration-500" id="header">
+    <header class="fixed w-full z-50 transition-all duration-500 header-transparent" id="header">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center">
-                <div class="bg-white p-2 rounded-lg shadow-md mr-3">
-                    <i class="fas fa-sticky-note text-blue-600 text-xl"></i>
-                </div>
-                <h1 class="text-2xl font-bold text-blue-700">Santana <span class="text-orange-500">Adesivos</span></h1>
+                <!-- Logo que muda com o scroll -->
+                <img src="logo.png" alt="Santana Adesivos" class="logo-img h-20 mr-3" id="header-logo">
+                <img src="logo2.png" alt="Santana Adesivos" class="logo-img h-20 mr-3 hidden"
+                    id="header-logo-scrolled">
             </div>
-            
+
             <nav class="hidden lg:flex space-x-8">
-                <a href="#inicio" class="nav-link text-gray-700 hover:text-blue-700 font-medium">Início</a>
-                <a href="#servicos" class="nav-link text-gray-700 hover:text-blue-700 font-medium">Serviços</a>
-                <a href="#destaques" class="nav-link text-gray-700 hover:text-blue-700 font-medium">Destaques</a>
-                <a href="#galeria" class="nav-link text-gray-700 hover:text-blue-700 font-medium">Galeria</a>
-                <a href="#contato" class="nav-link text-gray-700 hover:text-blue-700 font-medium">Contato</a>
-                <a href="#contato" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-lg font-medium transition duration-300 btn-primary">Orçamento</a>
+                <a href="#inicio" class="nav-link text-white hover:text-gray-300 font-medium">Início</a>
+                <a href="#servicos" class="nav-link text-white hover:text-gray-300 font-medium">Serviços</a>
+                <a href="#destaques" class="nav-link text-white hover:text-gray-300 font-medium">Destaques</a>
+                <a href="#galeria" class="nav-link text-white hover:text-gray-300 font-medium">Galeria</a>
+                <a href="#contato" class="nav-link text-white hover:text-gray-300 font-medium">Contato</a>
+                <a href="#contato"
+                    class="bg-black hover:bg-gray-800 text-white py-2 px-6 rounded-lg font-medium transition duration-300 btn-primary">Orçamento</a>
             </nav>
-            
+
             <div class="lg:hidden">
-                <button id="menu-toggle" class="text-gray-700 focus:outline-none bg-white p-2 rounded-lg shadow-md">
+                <button id="menu-toggle"
+                    class="text-white focus:outline-none bg-white bg-opacity-20 p-2 rounded-lg shadow-md">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
-        
+
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white py-4 px-4 shadow-lg absolute w-full">
-            <a href="#inicio" class="block py-3 text-gray-700 hover:text-blue-700 border-b border-gray-100">Início</a>
-            <a href="#servicos" class="block py-3 text-gray-700 hover:text-blue-700 border-b border-gray-100">Serviços</a>
-            <a href="#destaques" class="block py-3 text-gray-700 hover:text-blue-700 border-b border-gray-100">Destaques</a>
-            <a href="#galeria" class="block py-3 text-gray-700 hover:text-blue-700 border-b border-gray-100">Galeria</a>
-            <a href="#contato" class="block py-3 text-gray-700 hover:text-blue-700">Contato</a>
+            <a href="#inicio" class="block py-3 text-gray-700 hover:text-black border-b border-gray-100">Início</a>
+            <a href="#servicos" class="block py-3 text-gray-700 hover:text-black border-b border-gray-100">Serviços</a>
+            <a href="#destaques"
+                class="block py-3 text-gray-700 hover:text-black border-b border-gray-100">Destaques</a>
+            <a href="#galeria" class="block py-3 text-gray-700 hover:text-black border-b border-gray-100">Galeria</a>
+            <a href="#contato" class="block py-3 text-gray-700 hover:text-black">Contato</a>
             <div class="mt-4">
-                <a href="#contato" class="block text-center bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition duration-300 btn-primary">Solicitar Orçamento</a>
+                <a href="#contato"
+                    class="block text-center bg-black hover:bg-gray-800 text-white py-3 rounded-lg font-medium transition duration-300 btn-primary">Solicitar
+                    Orçamento</a>
             </div>
         </div>
     </header>
@@ -279,42 +314,51 @@
     <!-- Hero Section -->
     <section id="inicio" class="hero-bg min-h-screen flex items-center pt-16">
         <div class="container mx-auto px-4 py-20 text-white text-center">
-            <div class="inline-block bg-blue-600 text-white text-sm font-medium py-1 px-4 rounded-full mb-6 pulse">
+            <div class="inline-block bg-black text-white text-sm font-medium py-1 px-4 rounded-full mb-6 pulse">
                 <i class="fas fa-star mr-2"></i> Mais de 15 anos no mercado
             </div>
-            <h1 class="text-5xl md:text-7xl font-bold mb-6" data-aos="fade-up">Sua <span class="text-gradient">Marca</span> em Destaque</h1>
-            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">Soluções visuais de alta qualidade para sua empresa se destacar no mercado com criatividade e inovação</p>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6" data-aos="fade-up">Sua <span class="text-white">Marca</span>
+                em Destaque</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">Soluções
+                visuais de alta qualidade para sua empresa se destacar no mercado com criatividade e inovação</p>
             <div class="flex flex-col md:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="400">
-                <a href="#servicos" class="bg-blue-600 hover:bg-blue-700 text-white py-4 px-10 rounded-lg font-medium transition duration-300 btn-primary text-lg">
+                <a href="#servicos"
+                    class="bg-black hover:bg-gray-800 text-white py-4 px-10 rounded-lg font-medium transition duration-300 btn-primary text-lg">
                     <i class="fas fa-palette mr-2"></i> Nossos Serviços
                 </a>
-                <a href="#contato" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-700 text-white py-4 px-10 rounded-lg font-medium transition duration-300 text-lg">
+                <a href="#contato"
+                    class="bg-transparent border-2 border-white hover:bg-white hover:text-black text-white py-4 px-10 rounded-lg font-medium transition duration-300 text-lg">
                     <i class="fas fa-comment-dollar mr-2"></i> Orçamento Grátis
                 </a>
             </div>
-            
-            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="600">
-                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 border border-white border-opacity-20">
+
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto" data-aos="fade-up"
+                data-aos-delay="600">
+                <div
+                    class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 border border-white border-opacity-20">
                     <div class="counter" data-count="1500">0</div>
                     <p class="text-sm">Projetos Entregues</p>
                 </div>
-                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 border border-white border-opacity-20">
+                <div
+                    class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 border border-white border-opacity-20">
                     <div class="counter" data-count="98">0</div>
                     <p class="text-sm">Clientes Satisfeitos</p>
                 </div>
-                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 border border-white border-opacity-20">
+                <div
+                    class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 border border-white border-opacity-20">
                     <div class="counter" data-count="15">0</div>
                     <p class="text-sm">Anos de Experiência</p>
                 </div>
-                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 border border-white border-opacity-20">
+                <div
+                    class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 border border-white border-opacity-20">
                     <div class="counter" data-count="24">0</div>
                     <p class="text-sm">Horas de Entrega</p>
                 </div>
             </div>
         </div>
-        
+
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 floating">
-            <a href="#servicos" class="text-white text-2xl bg-blue-600 p-3 rounded-full">
+            <a href="#servicos" class="text-white text-2xl bg-black p-3 rounded-full">
                 <i class="fas fa-chevron-down"></i>
             </a>
         </div>
@@ -324,108 +368,119 @@
     <section id="servicos" class="py-20 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-4">Nossos <span class="text-gradient">Serviços</span></h2>
-                <p class="text-gray-600 text-center max-w-2xl mx-auto">Oferecemos uma ampla gama de soluções visuais para atender todas as suas necessidades com qualidade e agilidade</p>
+                <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-4">Nossos <span
+                        class="text-gradient">Serviços</span></h2>
+                <p class="text-gray-600 text-center max-w-2xl mx-auto">Oferecemos uma ampla gama de soluções visuais
+                    para atender todas as suas necessidades com qualidade e agilidade</p>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Serviços regulares -->
                 <div class="service-card p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-blue-600 mb-4 service-icon">
+                    <div class="text-black mb-4 service-icon">
                         <i class="fas fa-sticky-note text-5xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Adesivos em Geral</h3>
-                    <p class="text-gray-600 mb-4">Adesivos personalizados para diversos fins, desde promoções até identificação.</p>
-                    <a href="#contato" class="text-blue-600 font-medium inline-flex items-center">
-                        Saiba mais <i class="fas fa-arrow-right ml-2"></i>
+                    <p class="text-gray-600 mb-4">Adesivos personalizados para diversos fins, desde promoções até
+                        identificação.</p>
+                    <a href="#contato" class="text-black font-medium inline-flex items-center">
+                       
                     </a>
                 </div>
-                
+
                 <div class="service-card p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="150">
-                    <div class="text-blue-600 mb-4 service-icon">
+                    <div class="text-black mb-4 service-icon">
                         <i class="fas fa-flag text-5xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Faixas</h3>
-                    <p class="text-gray-600 mb-4">Faixas promocionais e informativas para eventos e estabelecimentos.</p>
-                    <a href="#contato" class="text-blue-600 font-medium inline-flex items-center">
-                        Saiba mais <i class="fas fa-arrow-right ml-2"></i>
+                    <p class="text-gray-600 mb-4">Faixas promocionais e informativas para eventos e estabelecimentos.
+                    </p>
+                    <a href="#contato" class="text-black font-medium inline-flex items-center">
+                     
                     </a>
                 </div>
-                
+
                 <div class="service-card p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-blue-600 mb-4 service-icon">
+                    <div class="text-black mb-4 service-icon">
                         <i class="fas fa-map-signs text-5xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Placas PVC - ACM - METALON</h3>
-                    <p class="text-gray-600 mb-4">Placas de sinalização e identificação com alta durabilidade e qualidade.</p>
-                    <a href="#contato" class="text-blue-600 font-medium inline-flex items-center">
-                        Saiba mais <i class="fas fa-arrow-right ml-2"></i>
+                    <p class="text-gray-600 mb-4">Placas de sinalização e identificação com alta durabilidade e
+                        qualidade.</p>
+                    <a href="#contato" class="text-black font-medium inline-flex items-center">
+                        
                     </a>
                 </div>
-                
+
                 <div class="service-card p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="250">
-                    <div class="text-blue-600 mb-4 service-icon">
+                    <div class="text-black mb-4 service-icon">
                         <i class="fas fa-lightbulb text-5xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Letreiros</h3>
-                    <p class="text-gray-600 mb-4">Letreiros e elementos luminosos para destacar seu negócio 24 horas.</p>
-                    <a href="#contato" class="text-blue-600 font-medium inline-flex items-center">
-                        Saiba mais <i class="fas fa-arrow-right ml-2"></i>
+                    <p class="text-gray-600 mb-4">Letreiros e elementos luminosos para destacar seu negócio 24 horas.
+                    </p>
+                    <a href="#contato" class="text-black font-medium inline-flex items-center">
+                     
                     </a>
                 </div>
-                
+
                 <div class="service-card p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-blue-600 mb-4 service-icon">
+                    <div class="text-black mb-4 service-icon">
                         <i class="fas fa-building text-5xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Fachadas</h3>
-                    <p class="text-gray-600 mb-4">Transformação completa de fachadas com materiais de alta qualidade.</p>
-                    <a href="#contato" class="text-blue-600 font-medium inline-flex items-center">
-                        Saiba mais <i class="fas fa-arrow-right ml-2"></i>
+                    <p class="text-gray-600 mb-4">Transformação completa de fachadas com materiais de alta qualidade.
+                    </p>
+                    <a href="#contato" class="text-black font-medium inline-flex items-center">
+                      
                     </a>
                 </div>
-                
+
                 <div class="service-card p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="350">
-                    <div class="text-blue-600 mb-4 service-icon">
+                    <div class="text-black mb-4 service-icon">
                         <i class="fas fa-image text-5xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Lonas</h3>
-                    <p class="text-gray-600 mb-4">Impressão em lona para outdoors, banners e displays de grande formato.</p>
-                    <a href="#contato" class="text-blue-600 font-medium inline-flex items-center">
-                        Saiba mais <i class="fas fa-arrow-right ml-2"></i>
+                    <p class="text-gray-600 mb-4">Impressão em lona para outdoors, banners e displays de grande formato.
+                    </p>
+                    <a href="#contato" class="text-black font-medium inline-flex items-center">
+                       
                     </a>
                 </div>
-                
+
                 <div class="service-card p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="400">
-                    <div class="text-blue-600 mb-4 service-icon">
+                    <div class="text-black mb-4 service-icon">
                         <i class="fas fa-id-card text-5xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Cartões de Visita</h3>
-                    <p class="text-gray-600 mb-4">Cartões de visita profissionais que representam sua marca com qualidade.</p>
-                    <a href="#contato" class="text-blue-600 font-medium inline-flex items-center">
-                        Saiba mais <i class="fas fa-arrow-right ml-2"></i>
+                    <p class="text-gray-600 mb-4">Cartões de visita profissionais que representam sua marca com
+                        qualidade.</p>
+                    <a href="#contato" class="text-black font-medium inline-flex items-center">
+                   
                     </a>
                 </div>
-                
+
                 <div class="service-card p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="450">
-                    <div class="text-blue-600 mb-4 service-icon">
+                    <div class="text-black mb-4 service-icon">
                         <i class="fas fa-file-alt text-5xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Folders</h3>
-                    <p class="text-gray-600 mb-4">Folders e panfletos promocionais com designs criativos e impactantes.</p>
-                    <a href="#contato" class="text-blue-600 font-medium inline-flex items-center">
-                        Saiba mais <i class="fas fa-arrow-right ml-2"></i>
+                    <p class="text-gray-600 mb-4">Folders e panfletos promocionais com designs criativos e impactantes.
+                    </p>
+                    <a href="#contato" class="text-black font-medium inline-flex items-center">
+                      
                     </a>
                 </div>
-                
+
                 <div class="service-card p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="500">
-                    <div class="text-blue-600 mb-4 service-icon">
+                    <div class="text-black mb-4 service-icon">
                         <i class="fas fa-tags text-5xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Rótulos</h3>
-                    <p class="text-gray-600 mb-4">Rótulos personalizados para produtos com alta qualidade de impressão.</p>
-                    <a href="#contato" class="text-blue-600 font-medium inline-flex items-center">
-                        Saiba mais <i class="fas fa-arrow-right ml-2"></i>
+                    <p class="text-gray-600 mb-4">Rótulos personalizados para produtos com alta qualidade de impressão.
+                    </p>
+                    <a href="#contato" class="text-black font-medium inline-flex items-center">
+                     
                     </a>
                 </div>
             </div>
@@ -433,49 +488,54 @@
     </section>
 
     <!-- Serviços em Destaque -->
-    <section id="destaques" class="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+    <section id="destaques" class="py-20 bg-gradient-to-r from-black to-gray-800 text-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4" data-aos="fade-up">Serviços <span class="text-orange-400">Em Destaque</span></h2>
-            <p class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="200">Nossos serviços mais procurados que oferecem o melhor retorno para seu investimento</p>
-            
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4" data-aos="fade-up">Serviços <span
+                    class="text-white">Em Destaque</span></h2>
+            <p class=" text-gray-600 text-center max-w-2xl mx-auto mb-12 " data-aos="fade-up" data-aos-delay="200">Nossos serviços mais
+                procurados que oferecem o melhor retorno para seu investimento</p>
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Plotagem Comercial -->
                 <div class="highlighted-service p-8 rounded-xl shadow-lg" data-aos="zoom-in" data-aos-delay="300">
                     <div class="flex items-center mb-4">
-                        <div class="text-blue-600 mr-4">
+                        <div class="text-black mr-4">
                             <i class="fas fa-print text-5xl"></i>
                         </div>
-                        <h3 class="text-2xl font-bold">Plotagem Comercial</h3>
+                        <h3 class="text-2xl font-bold text-gray-600 ">Plotagem</h3>
                     </div>
-                    <p class="mb-4">Serviço de impressão em grande formato com a mais alta qualidade e precisão de cores para aplicações comerciais.</p>
-                    <ul class="list-disc pl-5 mb-6 space-y-2">
+                    <p class="mb-4 text-gray-600">Serviço de impressão em grande formato com a mais alta qualidade e precisão de cores
+                        para aplicações comerciais.</p>
+                    <ul class="list-disc pl-5 mb-6 space-y-2 text-gray-600">
                         <li>Impressão em adesivo, lona, banner e outros materiais</li>
                         <li>Alta resistência às intempéries</li>
                         <li>Cores vibrantes e fidelidade de imagem</li>
                         <li>Entrega rápida e com qualidade garantida</li>
                         <li>Soluções personalizadas para seu negócio</li>
                     </ul>
-                    <a href="#contato" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-lg font-medium transition duration-300 btn-primary">
+                    <a href="#contato"
+                        class="bg-black hover:bg-gray-800 text-white py-3 px-8 rounded-lg font-medium transition duration-300 btn-primary">
                         <i class="fas fa-dollar-sign mr-2"></i> Solicitar Orçamento
                     </a>
                 </div>
-                
+
                 <!-- Envelopamento -->
                 <div class="highlighted-service p-8 rounded-xl shadow-lg" data-aos="zoom-in" data-aos-delay="500">
                     <div class="flex items-center mb-4">
-                        <div class="text-blue-600 mr-4">
+                        <div class="text-black mr-4">
                             <i class="fas fa-car text-5xl"></i>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold">Envelopamento</h3>
-                            <p class="text-sm text-gray-600">Automotivo e Decorativo</p>
+                            <h3 class="text-2xl font-bold text-gray-600">Envelopamento</h3>
+                            <p class="text-sm text-gray-600 text-gray-600">Automotivo e Decorativo</p>
                         </div>
                     </div>
-                    <p class="mb-4">Transforme completamente a aparência de veículos, móveis e superfícies com nossos serviços de envelopamento de alta qualidade.</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <p class="mb-4 text-gray-600">Transforme completamente a aparência de veículos, móveis e superfícies com nossos
+                        serviços de envelopamento de alta qualidade.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-gray-600">
                         <div>
-                            <h4 class="font-bold mb-2 text-blue-700">Envelopamento Auto</h4>
-                            <ul class="list-disc pl-5 text-sm space-y-1">
+                            <h4 class="font-bold mb-2 text-black text-gray-600">Envelopamento Auto</h4>
+                            <ul class="list-disc pl-5 text-sm space-y-1 text-gray-600">
                                 <li>Proteção da pintura original</li>
                                 <li>Personalização completa</li>
                                 <li>Remoção sem danos</li>
@@ -483,8 +543,8 @@
                             </ul>
                         </div>
                         <div>
-                            <h4 class="font-bold mb-2 text-blue-700">Envelopamento Decorativo</h4>
-                            <ul class="list-disc pl-5 text-sm space-y-1">
+                            <h4 class="font-bold mb-2 text-black text-gray-600">Envelopamento Decorativo</h4>
+                            <ul class="list-disc pl-5 text-sm space-y-1 text-gray-600">
                                 <li>Ambientes comerciais</li>
                                 <li>Vitrines e displays</li>
                                 <li>Móveis e superfícies</li>
@@ -492,7 +552,8 @@
                             </ul>
                         </div>
                     </div>
-                    <a href="#contato" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-lg font-medium transition duration-300 btn-primary">
+                    <a href="#contato"
+                        class="bg-black hover:bg-gray-800 text-white py-3 px-8 rounded-lg font-medium transition duration-300 btn-primary">
                         <i class="fas fa-dollar-sign mr-2"></i> Solicitar Orçamento
                     </a>
                 </div>
@@ -503,211 +564,200 @@
     <!-- Galeria Section -->
     <section id="galeria" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4" data-aos="fade-up">Nossos <span class="text-gradient">Trabalhos</span></h2>
-            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="200">Confira alguns exemplos dos nossos trabalhos realizados com excelência e qualidade</p>
-            
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4" data-aos="fade-up">Nossos <span
+                    class="text-gradient">Trabalhos</span></h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="200">Confira
+                alguns exemplos dos nossos trabalhos realizados com excelência e qualidade</p>
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-container">
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Plotagem" class="w-full h-64 object-cover">
+                    <img src="exemplo.jpeg"
+                        alt="Plotagem" class="w-full h-64 object-cover">
                     <div class="gallery-overlay">
                         <h3 class="font-bold text-lg">Plotagem em Grande Formato</h3>
                         <p class="text-sm mt-2">Impressão de alta qualidade para fachadas</p>
                     </div>
                 </div>
-                
+
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Envelopamento Automotivo" class="w-full h-64 object-cover">
+                  <img src="exemplo.jpeg"
+                        alt="Envelopamento Automotivo" class="w-full h-64 object-cover">
                     <div class="gallery-overlay">
                         <h3 class="font-bold text-lg">Envelopamento Automotivo</h3>
                         <p class="text-sm mt-2">Personalização completa de veículos</p>
                     </div>
                 </div>
-                
+
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25856cd63?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Fachada" class="w-full h-64 object-cover">
+            <img src="exemplo.jpeg"
+                        alt="Fachada" class="w-full h-64 object-cover">
                     <div class="gallery-overlay">
                         <h3 class="font-bold text-lg">Fachada Comercial</h3>
                         <p class="text-sm mt-2">Transformação visual para empresas</p>
                     </div>
                 </div>
-                
+
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Luminoso" class="w-full h-64 object-cover">
+            <img src="exemplo.jpeg"
+                        alt="Luminoso" class="w-full h-64 object-cover">
                     <div class="gallery-overlay">
                         <h3 class="font-bold text-lg">Letreiro Luminoso</h3>
                         <p class="text-sm mt-2">Destaque noturno para seu negócio</p>
                     </div>
                 </div>
-                
+
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1565688534245-05d6b5be184a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Adesivos" class="w-full h-64 object-cover">
+                   <img src="exemplo.jpeg"
+                        alt="Adesivos" class="w-full h-64 object-cover">
                     <div class="gallery-overlay">
                         <h3 class="font-bold text-lg">Adesivos Personalizados</h3>
                         <p class="text-sm mt-2">Soluções criativas para identificação</p>
                     </div>
                 </div>
-                
+
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Cartões" class="w-full h-64 object-cover">
+                  <img src="exemplo.jpeg"
+                        alt="Cartões" class="w-full h-64 object-cover">
                     <div class="gallery-overlay">
                         <h3 class="font-bold text-lg">Cartões de Visita</h3>
                         <p class="text-sm mt-2">Design profissional para sua marca</p>
                     </div>
                 </div>
             </div>
-            
+
             <div class="text-center mt-12" data-aos="fade-up">
-                <a href="#contato" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-lg font-medium transition duration-300 btn-primary text-lg">
+                <a href="#contato"
+                    class="bg-black hover:bg-gray-800 text-white py-3 px-8 rounded-lg font-medium transition duration-300 btn-primary text-lg">
                     <i class="fas fa-images mr-2"></i> Ver Mais Trabalhos
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Contato Section -->
-    <section id="contato" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4" data-aos="fade-up">Entre em <span class="text-gradient">Contato</span></h2>
-            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="200">Solicite um orçamento ou tire suas dúvidas sobre nossos serviços</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div data-aos="fade-right">
-                    <h3 class="text-2xl font-bold mb-6">Informações de Contato</h3>
-                    
-                    <div class="flex items-start mb-6 p-4 bg-gray-50 rounded-lg">
-                        <div class="text-blue-600 mr-4 bg-white p-3 rounded-lg">
-                            <i class="fas fa-map-marker-alt text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold">Endereço</h4>
-                            <p class="text-gray-600">Rua Exemplo, 123 - Centro<br>São Paulo - SP</p>
-                        </div>
+   <section id="contato" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4" data-aos="fade-up">Entre em <span
+                class="text-gradient">Contato</span></h2>
+        <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="200">
+            Solicite um orçamento ou tire suas dúvidas sobre nossos serviços</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div data-aos="fade-right">
+                <h3 class="text-2xl font-bold mb-6">Informações de Contato</h3>
+
+                <div class="flex items-start mb-6 p-4 bg-gray-50 rounded-lg">
+                    <div class="text-black mr-4 bg-white p-3 rounded-lg border border-gray-200">
+                        <i class="fas fa-map-marker-alt text-xl"></i>
                     </div>
-                    
-                    <div class="flex items-start mb-6 p-4 bg-gray-50 rounded-lg">
-                        <div class="text-blue-600 mr-4 bg-white p-3 rounded-lg">
-                            <i class="fas fa-phone-alt text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold">Telefone</h4>
-                            <p class="text-gray-600">(11) 9999-9999</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start mb-6 p-4 bg-gray-50 rounded-lg">
-                        <div class="text-blue-600 mr-4 bg-white p-3 rounded-lg">
-                            <i class="fas fa-envelope text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold">E-mail</h4>
-                            <p class="text-gray-600">contato@santanaadesivos.com.br</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start p-4 bg-gray-50 rounded-lg">
-                        <div class="text-blue-600 mr-4 bg-white p-3 rounded-lg">
-                            <i class="fas fa-clock text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold">Horário de Atendimento</h4>
-                            <p class="text-gray-600">Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
-                        </div>
+                    <div>
+                        <h4 class="font-bold">Endereço</h4>
+                        <p class="text-gray-600">---------- <br> -----</p>
                     </div>
                 </div>
-                
-                <div data-aos="fade-left">
-                    <form class="bg-gray-50 p-8 rounded-xl shadow-md">
-                        <div class="mb-4">
-                            <label class="block text-gray-700 mb-2 font-medium" for="nome">Nome</label>
-                            <input type="text" id="nome" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300">
-                        </div>
-                        
-                        <div class="mb-4">
-                            <label class="block text-gray-700 mb-2 font-medium" for="email">E-mail</label>
-                            <input type="email" id="email" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300">
-                        </div>
-                        
-                        <div class="mb-4">
-                            <label class="block text-gray-700 mb-2 font-medium" for="telefone">Telefone</label>
-                            <input type="text" id="telefone" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300">
-                        </div>
-                        
-                        <div class="mb-4">
-                            <label class="block text-gray-700 mb-2 font-medium" for="servico">Serviço de Interesse</label>
-                            <select id="servico" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300">
-                                <option value="">Selecione um serviço</option>
-                                <option value="plotagem">Plotagem Comercial</option>
-                                <option value="envelopamento-auto">Envelopamento Auto</option>
-                                <option value="envelopamento-decor">Envelopamento Decorativo</option>
-                                <option value="adesivos">Adesivos em Geral</option>
-                                <option value="placas">Placas PVC - ACM - METALON</option>
-                                <option value="faixas">Faixas</option>
-                                <option value="letreiros">Letreiros</option>
-                                <option value="fachadas">Fachadas</option>
-                                <option value="lonas">Lonas</option>
-                                <option value="cartoes">Cartões de Visita</option>
-                                <option value="folders">Folders</option>
-                                <option value="rotulos">Rótulos</option>
-                            </select>
-                        </div>
-                        
-                        <div class="mb-4">
-                            <label class="block text-gray-700 mb-2 font-medium" for="mensagem">Mensagem</label>
-                            <textarea id="mensagem" rows="4" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 px-4 rounded-lg font-medium transition duration-300 btn-primary text-lg">
-                            <i class="fas fa-paper-plane mr-2"></i> Enviar Mensagem
-                        </button>
-                    </form>
+
+                <div class="flex items-start mb-6 p-4 bg-gray-50 rounded-lg">
+                    <div class="text-black mr-4 bg-white p-3 rounded-lg border border-gray-200">
+                        <i class="fas fa-phone-alt text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold">Telefone</h4>
+                        <p class="text-gray-600">(11) 9999-9999</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start mb-6 p-4 bg-gray-50 rounded-lg">
+                    <div class="text-black mr-4 bg-white p-3 rounded-lg border border-gray-200">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold">E-mail</h4>
+                        <p class="text-gray-600">contato@santanaadesivos.com.br</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start p-4 bg-gray-50 rounded-lg">
+                    <div class="text-black mr-4 bg-white p-3 rounded-lg border border-gray-200">
+                        <i class="fas fa-clock text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold">Horário de Atendimento</h4>
+                        <p class="text-gray-600">Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
+                    </div>
                 </div>
             </div>
+
+            <div data-aos="fade-left">
+                <!-- Mapa do Google Maps -->
+                <div class="mb-8">
+                    <h3 class="text-2xl font-bold mb-4">Nossa Localização</h3>
+                    <div class="rounded-xl overflow-hidden shadow-lg border border-gray-200">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.155632430999!2d-48.89767222376395!3d-26.289054267436715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x28f1ed749a9636cd%3A0x818a0b081e2ed319!2sSantana%20Adesivos!5e0!3m2!1spt-BR!2sbr!4v1761878717246!5m2!1spt-BR!2sbr" 
+                            width="100%" 
+                            height="300" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="w-full h-80">
+                        </iframe>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2 text-center">------</p>
+                </div>
+
+              
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div data-aos="fade-up">
-                    <h3 class="text-2xl font-bold mb-4">Santana <span class="text-orange-500">Adesivos</span></h3>
+                    <img src="logo-branca.png" alt="Santana Adesivos" class="h-12 w-auto mb-4">
+                    <h3 class="text-2xl font-bold mb-4">Santana <span class="text-white">Adesivos</span></h3>
                     <p class="mb-4">Soluções visuais de alta qualidade para sua empresa se destacar no mercado.</p>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-white hover:text-blue-400 bg-gray-700 p-2 rounded-lg transition duration-300">
+                        <a href="#"
+                            class="text-white hover:text-gray-300 bg-gray-700 p-2 rounded-lg transition duration-300">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="text-white hover:text-blue-400 bg-gray-700 p-2 rounded-lg transition duration-300">
+                        <a href="#"
+                            class="text-white hover:text-gray-300 bg-gray-700 p-2 rounded-lg transition duration-300">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="text-white hover:text-blue-400 bg-gray-700 p-2 rounded-lg transition duration-300">
+                        <a href="#"
+                            class="text-white hover:text-gray-300 bg-gray-700 p-2 rounded-lg transition duration-300">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
                 </div>
-                
+
                 <div data-aos="fade-up" data-aos-delay="200">
                     <h4 class="text-xl font-bold mb-4">Links Rápidos</h4>
                     <ul class="space-y-2">
-                        <li><a href="#inicio" class="hover:text-blue-400 transition duration-300">Início</a></li>
-                        <li><a href="#servicos" class="hover:text-blue-400 transition duration-300">Serviços</a></li>
-                        <li><a href="#destaques" class="hover:text-blue-400 transition duration-300">Destaques</a></li>
-                        <li><a href="#galeria" class="hover:text-blue-400 transition duration-300">Galeria</a></li>
-                        <li><a href="#contato" class="hover:text-blue-400 transition duration-300">Contato</a></li>
+                        <li><a href="#inicio" class="hover:text-gray-300 transition duration-300">Início</a></li>
+                        <li><a href="#servicos" class="hover:text-gray-300 transition duration-300">Serviços</a></li>
+                        <li><a href="#destaques" class="hover:text-gray-300 transition duration-300">Destaques</a></li>
+                        <li><a href="#galeria" class="hover:text-gray-300 transition duration-300">Galeria</a></li>
+                        <li><a href="#contato" class="hover:text-gray-300 transition duration-300">Contato</a></li>
                     </ul>
                 </div>
-                
+
                 <div data-aos="fade-up" data-aos-delay="400">
                     <h4 class="text-xl font-bold mb-4">Nossos Serviços</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-blue-400 transition duration-300">Plotagem Comercial</a></li>
-                        <li><a href="#" class="hover:text-blue-400 transition duration-300">Envelopamento</a></li>
-                        <li><a href="#" class="hover:text-blue-400 transition duration-300">Adesivos</a></li>
-                        <li><a href="#" class="hover:text-blue-400 transition duration-300">Placas</a></li>
-                        <li><a href="#" class="hover:text-blue-400 transition duration-300">Fachadas</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition duration-300">Plotagem Comercial</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition duration-300">Envelopamento</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition duration-300">Adesivos</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition duration-300">Placas</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition duration-300">Fachadas</a></li>
                     </ul>
                 </div>
             </div>
-            
+
             <div class="border-t border-gray-700 mt-8 pt-8 text-center" data-aos="fade-up">
                 <p>&copy; 2023 Santana Adesivos. Todos os direitos reservados.</p>
             </div>
@@ -721,72 +771,108 @@
             once: true,
             offset: 100
         });
-        
+
         // Menu toggle for mobile
-        document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('menu-toggle').addEventListener('click', function () {
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenu.classList.toggle('hidden');
         });
-        
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
+
+        // Header scroll effect - Muda a logo e cores
+        window.addEventListener('scroll', function () {
             const header = document.getElementById('header');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const menuToggle = document.getElementById('menu-toggle');
+            const logoWhite = document.getElementById('header-logo');
+            const logoBlack = document.getElementById('header-logo-scrolled');
+
             if (window.scrollY > 50) {
+                header.classList.remove('header-transparent');
                 header.classList.add('header-scrolled');
+
+                // Muda a cor dos textos para escuro
+                navLinks.forEach(link => {
+                    link.classList.remove('text-white', 'hover:text-gray-300');
+                    link.classList.add('text-gray-700', 'hover:text-black');
+                });
+
+                // Muda a cor do botão do menu mobile
+                menuToggle.classList.remove('text-white', 'bg-opacity-20');
+                menuToggle.classList.add('text-gray-700', 'bg-white');
+
+                // Troca a logo - branca para preta
+                logoWhite.classList.add('hidden');
+                logoBlack.classList.remove('hidden');
+
             } else {
+                header.classList.add('header-transparent');
                 header.classList.remove('header-scrolled');
+
+                // Volta a cor original dos textos
+                navLinks.forEach(link => {
+                    link.classList.add('text-white', 'hover:text-gray-300');
+                    link.classList.remove('text-gray-700', 'hover:text-black');
+                });
+
+                // Volta a cor original do botão do menu mobile
+                menuToggle.classList.add('text-white', 'bg-opacity-20');
+                menuToggle.classList.remove('text-gray-700', 'bg-white');
+
+                // Troca a logo - preta para branca
+                logoWhite.classList.remove('hidden');
+                logoBlack.classList.add('hidden');
             }
         });
-        
+
         // Gallery animation on scroll
         const galleryItems = document.querySelectorAll('.gallery-item');
-        
+
         const galleryOnScroll = () => {
             galleryItems.forEach(item => {
                 const itemTop = item.getBoundingClientRect().top;
                 const itemVisible = 150;
-                
+
                 if (itemTop < window.innerHeight - itemVisible) {
                     item.classList.add('visible');
                 }
             });
         };
-        
+
         window.addEventListener('scroll', galleryOnScroll);
         // Initial check
         galleryOnScroll();
-        
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
+
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
+
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
-                    
+
                     // Close mobile menu if open
                     const mobileMenu = document.getElementById('mobile-menu');
                     mobileMenu.classList.add('hidden');
                 }
             });
         });
-        
+
         // Counter animation
         const counters = document.querySelectorAll('.counter');
         const speed = 200;
-        
+
         const animateCounters = () => {
             counters.forEach(counter => {
                 const target = +counter.getAttribute('data-count');
                 const count = +counter.innerText;
-                
+
                 if (count < target) {
                     counter.innerText = Math.ceil(count + (target / speed));
                     setTimeout(animateCounters, 1);
@@ -795,7 +881,7 @@
                 }
             });
         };
-        
+
         // Start counters when they come into view
         const counterObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -805,10 +891,11 @@
                 }
             });
         }, { threshold: 0.5 });
-        
+
         counters.forEach(counter => {
             counterObserver.observe(counter);
         });
     </script>
 </body>
+
 </html>
