@@ -353,27 +353,22 @@
                 </a>
             </div>
 
-            <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto" data-aos="fade-up"
+         <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto" data-aos="fade-up"
                 data-aos-delay="600">
                 <div
                     class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-3 border border-white border-opacity-20">
-                    <div class="counter text-2xl" data-count="1500">0</div>
+                    <div class="counter text-2xl" data-count="1000">+0</div>
                     <p class="text-xs">Projetos Entregues</p>
                 </div>
                 <div
                     class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-3 border border-white border-opacity-20">
-                    <div class="counter text-2xl" data-count="98">0</div>
+                    <div class="counter text-2xl" data-count="98">+0</div>
                     <p class="text-xs">Clientes Satisfeitos</p>
                 </div>
                 <div
                     class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-3 border border-white border-opacity-20">
-                    <div class="counter text-2xl" data-count="15">0</div>
+                    <div class="counter text-2xl" data-count="5">+0</div>
                     <p class="text-xs">Anos de Experiência</p>
-                </div>
-                <div
-                    class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-3 border border-white border-opacity-20">
-                    <div class="counter text-2xl" data-count="24">0</div>
-                    <p class="text-xs">Horas de Entrega</p>
                 </div>
             </div>
         </div>
@@ -768,137 +763,143 @@
     </footer>
 
     <script>
-        // Inicializar AOS (Animate On Scroll)
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
-        });
+    // Inicializar AOS (Animate On Scroll)
+    AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100
+    });
 
-        // Menu toggle for mobile
-        document.getElementById('menu-toggle').addEventListener('click', function () {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
-        });
+    // Menu toggle for mobile
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
 
-        // Header scroll effect - Muda a logo e cores
-        window.addEventListener('scroll', function () {
-            const header = document.getElementById('header');
-            const navLinks = document.querySelectorAll('.nav-link');
-            const menuToggle = document.getElementById('menu-toggle');
-            const logoWhite = document.getElementById('header-logo');
-            const logoBlack = document.getElementById('header-logo-scrolled');
+    // Header scroll effect - Muda a logo e cores
+    window.addEventListener('scroll', function () {
+        const header = document.getElementById('header');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const menuToggle = document.getElementById('menu-toggle');
+        const logoWhite = document.getElementById('header-logo');
+        const logoBlack = document.getElementById('header-logo-scrolled');
 
-            if (window.scrollY > 50) {
-                header.classList.remove('header-transparent');
-                header.classList.add('header-scrolled');
+        if (window.scrollY > 50) {
+            header.classList.remove('header-transparent');
+            header.classList.add('header-scrolled');
 
-                // Muda a cor dos textos para escuro
-                navLinks.forEach(link => {
-                    link.classList.remove('text-white', 'hover:text-gray-300');
-                    link.classList.add('text-gray-700', 'hover:text-black');
-                });
+            // Muda a cor dos textos para escuro
+            navLinks.forEach(link => {
+                link.classList.remove('text-white', 'hover:text-gray-300');
+                link.classList.add('text-gray-700', 'hover:text-black');
+            });
 
-                // Muda a cor do botão do menu mobile
-                menuToggle.classList.remove('text-white', 'bg-opacity-20');
-                menuToggle.classList.add('text-gray-700', 'bg-white');
+            // Muda a cor do botão do menu mobile
+            menuToggle.classList.remove('text-white', 'bg-opacity-20');
+            menuToggle.classList.add('text-gray-700', 'bg-white');
 
-                // Troca a logo - branca para preta
-                logoWhite.classList.add('hidden');
-                logoBlack.classList.remove('hidden');
+            // Troca a logo - branca para preta
+            logoWhite.classList.add('hidden');
+            logoBlack.classList.remove('hidden');
 
-            } else {
-                header.classList.add('header-transparent');
-                header.classList.remove('header-scrolled');
+        } else {
+            header.classList.add('header-transparent');
+            header.classList.remove('header-scrolled');
 
-                // Volta a cor original dos textos
-                navLinks.forEach(link => {
-                    link.classList.add('text-white', 'hover:text-gray-300');
-                    link.classList.remove('text-gray-700', 'hover:text-black');
-                });
+            // Volta a cor original dos textos
+            navLinks.forEach(link => {
+                link.classList.add('text-white', 'hover:text-gray-300');
+                link.classList.remove('text-gray-700', 'hover:text-black');
+            });
 
-                // Volta a cor original do botão do menu mobile
-                menuToggle.classList.add('text-white', 'bg-opacity-20');
-                menuToggle.classList.remove('text-gray-700', 'bg-white');
+            // Volta a cor original do botão do menu mobile
+            menuToggle.classList.add('text-white', 'bg-opacity-20');
+            menuToggle.classList.remove('text-gray-700', 'bg-white');
 
-                // Troca a logo - preta para branca
-                logoWhite.classList.remove('hidden');
-                logoBlack.classList.add('hidden');
+            // Troca a logo - preta para branca
+            logoWhite.classList.remove('hidden');
+            logoBlack.classList.add('hidden');
+        }
+    });
+
+    // Gallery animation on scroll
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    const galleryOnScroll = () => {
+        galleryItems.forEach(item => {
+            const itemTop = item.getBoundingClientRect().top;
+            const itemVisible = 150;
+
+            if (itemTop < window.innerHeight - itemVisible) {
+                item.classList.add('visible');
             }
         });
+    };
 
-        // Gallery animation on scroll
-        const galleryItems = document.querySelectorAll('.gallery-item');
+    window.addEventListener('scroll', galleryOnScroll);
+    // Initial check
+    galleryOnScroll();
 
-        const galleryOnScroll = () => {
-            galleryItems.forEach(item => {
-                const itemTop = item.getBoundingClientRect().top;
-                const itemVisible = 150;
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
 
-                if (itemTop < window.innerHeight - itemVisible) {
-                    item.classList.add('visible');
-                }
-            });
-        };
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
 
-        window.addEventListener('scroll', galleryOnScroll);
-        // Initial check
-        galleryOnScroll();
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-
-                    // Close mobile menu if open
-                    const mobileMenu = document.getElementById('mobile-menu');
-                    mobileMenu.classList.add('hidden');
-                }
-            });
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.add('hidden');
+            }
         });
+    });
 
-        // Counter animation
-        const counters = document.querySelectorAll('.counter');
-        const speed = 200;
+    // Counter animation com suporte a prefixo
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200;
 
-        const animateCounters = () => {
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-count');
-                const count = +counter.innerText;
-
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + (target / speed));
-                    setTimeout(animateCounters, 1);
-                } else {
-                    counter.innerText = target;
-                }
-            });
-        };
-
-        // Start counters when they come into view
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounters();
-                    counterObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
+    const animateCounters = () => {
         counters.forEach(counter => {
-            counterObserver.observe(counter);
+            const target = +counter.getAttribute('data-count');
+            const currentText = counter.innerText;
+            
+            // Extrai o prefixo (caracteres não numéricos)
+            const prefix = currentText.replace(/[0-9]/g, '');
+            // Extrai apenas o número atual
+            const currentCount = +currentText.replace(/[^0-9]/g, '');
+            
+            if (currentCount < target) {
+                const nextCount = Math.ceil(currentCount + (target / speed));
+                counter.innerText = prefix + nextCount;
+                setTimeout(animateCounters, 1);
+            } else {
+                counter.innerText = prefix + target;
+            }
         });
-    </script>
+    };
+
+    // Start counters when they come into view
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounters();
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => {
+        counterObserver.observe(counter);
+    });
+</script>
 </body>
 
 </html>
