@@ -269,7 +269,7 @@
 <body class="bg-gray-50">
     <!-- Header/Navbar -->
     <header class="fixed w-full z-50 transition-all duration-500 header-transparent" id="header">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <div class="container mx-auto px-6 lg:px-8 py-3 flex justify-between items-center">
             <div class="flex items-center">
                 <!-- Logo que muda com o scroll -->
                 <img src="logo.png" alt="Santana Adesivos" class="logo-img h-20 mr-3" id="header-logo">
@@ -312,53 +312,74 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="inicio" class="hero-bg min-h-screen flex items-center pt-16">
-        <div class="container mx-auto px-4 py-20 text-white text-center">
-            <div class="inline-block bg-black text-white text-sm font-medium py-1 px-4 rounded-full mb-6 pulse">
-                <i class="fas fa-star mr-2"></i> Mais de 15 anos no mercado
+    <section id="inicio" class="relative min-h-screen flex items-center pt-16 overflow-hidden">
+        <!-- Vídeo de Fundo -->
+        <div class="absolute inset-0 w-full h-full z-0">
+            <video 
+                autoplay 
+                muted 
+                loop 
+                playsinline 
+                class="w-full h-full object-cover"
+                poster="hero_video.mp4"
+            >
+                <!-- Adicione múltiplos formatos para melhor compatibilidade -->
+                <source src="hero_video.mp4" type="video/mp4">
+                <source src="video_vers2.svg" type="video/svg">
+                <!-- Fallback para imagem caso o vídeo não carregue -->
+                Seu navegador não suporta vídeos HTML5.
+            </video>
+            <!-- Overlay escuro para melhor contraste -->
+            <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+        </div>
+
+        <!-- Conteúdo -->
+        <div class="container mx-auto px-6 lg:px-8 py-16 text-white text-center relative z-10">
+            <div class="inline-block bg-black text-white text-xs font-medium py-1 px-3 rounded-full mb-4 pulse">
+                <i class="fas fa-star mr-1"></i> Mais de 15 anos no mercado
             </div>
-            <h1 class="text-5xl md:text-7xl font-bold mb-6" data-aos="fade-up">Sua <span class="text-white">Marca</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4" data-aos="fade-up">Sua <span class="text-white">Marca</span>
                 em Destaque</h1>
-            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">Soluções
+            <p class="text-lg md:text-xl mb-6 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">Soluções
                 visuais de alta qualidade para sua empresa se destacar no mercado com criatividade e inovação</p>
-            <div class="flex flex-col md:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="flex flex-col md:flex-row justify-center gap-3" data-aos="fade-up" data-aos-delay="400">
                 <a href="#servicos"
-                    class="bg-black hover:bg-gray-800 text-white py-4 px-10 rounded-lg font-medium transition duration-300 btn-primary text-lg">
+                    class="bg-black hover:bg-gray-800 text-white py-3 px-8 rounded-lg font-medium transition duration-300 btn-primary text-base">
                     <i class="fas fa-palette mr-2"></i> Nossos Serviços
                 </a>
                 <a href="#contato"
-                    class="bg-transparent border-2 border-white hover:bg-white hover:text-black text-white py-4 px-10 rounded-lg font-medium transition duration-300 text-lg">
+                    class="bg-transparent border-2 border-white hover:bg-white hover:text-black text-white py-3 px-8 rounded-lg font-medium transition duration-300 text-base">
                     <i class="fas fa-comment-dollar mr-2"></i> Orçamento Grátis
                 </a>
             </div>
 
-            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto" data-aos="fade-up"
+            <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto" data-aos="fade-up"
                 data-aos-delay="600">
                 <div
-                    class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 border border-white border-opacity-20">
-                    <div class="counter" data-count="1500">0</div>
-                    <p class="text-sm">Projetos Entregues</p>
+                    class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-3 border border-white border-opacity-20">
+                    <div class="counter text-2xl" data-count="1500">0</div>
+                    <p class="text-xs">Projetos Entregues</p>
                 </div>
                 <div
-                    class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 border border-white border-opacity-20">
-                    <div class="counter" data-count="98">0</div>
-                    <p class="text-sm">Clientes Satisfeitos</p>
+                    class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-3 border border-white border-opacity-20">
+                    <div class="counter text-2xl" data-count="98">0</div>
+                    <p class="text-xs">Clientes Satisfeitos</p>
                 </div>
                 <div
-                    class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 border border-white border-opacity-20">
-                    <div class="counter" data-count="15">0</div>
-                    <p class="text-sm">Anos de Experiência</p>
+                    class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-3 border border-white border-opacity-20">
+                    <div class="counter text-2xl" data-count="15">0</div>
+                    <p class="text-xs">Anos de Experiência</p>
                 </div>
                 <div
-                    class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 border border-white border-opacity-20">
-                    <div class="counter" data-count="24">0</div>
-                    <p class="text-sm">Horas de Entrega</p>
+                    class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-3 border border-white border-opacity-20">
+                    <div class="counter text-2xl" data-count="24">0</div>
+                    <p class="text-xs">Horas de Entrega</p>
                 </div>
             </div>
         </div>
 
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 floating">
-            <a href="#servicos" class="text-white text-2xl bg-black p-3 rounded-full">
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 floating z-10">
+            <a href="#servicos" class="text-white text-xl bg-black p-2 rounded-full">
                 <i class="fas fa-chevron-down"></i>
             </a>
         </div>
@@ -366,7 +387,7 @@
 
     <!-- Serviços Section -->
     <section id="servicos" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-4">Nossos <span
                         class="text-gradient">Serviços</span></h2>
@@ -489,7 +510,7 @@
 
     <!-- Serviços em Destaque -->
     <section id="destaques" class="py-20 bg-gradient-to-r from-black to-gray-800 text-white">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-6 lg:px-8">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-4" data-aos="fade-up">Serviços <span
                     class="text-white">Em Destaque</span></h2>
             <p class=" text-gray-600 text-center max-w-2xl mx-auto mb-12 " data-aos="fade-up" data-aos-delay="200">Nossos serviços mais
@@ -563,7 +584,7 @@
 
     <!-- Galeria Section -->
     <section id="galeria" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-6 lg:px-8">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-4" data-aos="fade-up">Nossos <span
                     class="text-gradient">Trabalhos</span></h2>
             <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="200">Confira
@@ -635,7 +656,7 @@
     </section>
 
    <section id="contato" class="py-20 bg-white">
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto px-6 lg:px-8">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-4" data-aos="fade-up">Entre em <span
                 class="text-gradient">Contato</span></h2>
         <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="200">
@@ -686,25 +707,7 @@
                 </div>
             </div>
 
-            <div data-aos="fade-left">
-                <!-- Mapa do Google Maps -->
-                <div class="mb-8">
-                    <h3 class="text-2xl font-bold mb-4">Nossa Localização</h3>
-                    <div class="rounded-xl overflow-hidden shadow-lg border border-gray-200">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.155632430999!2d-48.89767222376395!3d-26.289054267436715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x28f1ed749a9636cd%3A0x818a0b081e2ed319!2sSantana%20Adesivos!5e0!3m2!1spt-BR!2sbr!4v1761878717246!5m2!1spt-BR!2sbr" 
-                            width="100%" 
-                            height="300" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade"
-                            class="w-full h-80">
-                        </iframe>
-                    </div>
-                    <p class="text-sm text-gray-500 mt-2 text-center">------</p>
-                </div>
-
+            
               
             </div>
         </div>
@@ -712,11 +715,11 @@
 </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-4">
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div data-aos="fade-up">
-                    <img src="logo-branca.png" alt="Santana Adesivos" class="h-12 w-auto mb-4">
+                    <img src="logo.png" alt="Santana Adesivos" class="h-20 w-auto mb-4">
                     <h3 class="text-2xl font-bold mb-4">Santana <span class="text-white">Adesivos</span></h3>
                     <p class="mb-4">Soluções visuais de alta qualidade para sua empresa se destacar no mercado.</p>
                     <div class="flex space-x-4">
