@@ -601,15 +601,20 @@
 
     <section id="galeria" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4" data-aos="fade-up">Plotagem de <span
-                    class="text-gradient">Veículos</span></h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4" data-aos="fade-up">
+                Plotagem de <span class="text-gradient">Veículos</span>
+            </h2>
+
             <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="200">
                 Padronização de frota e plotagem parcial ou total com design personalizado para valorizar sua identidade
-                e atrair novos clientes.</p>
+                e atrair novos clientes.
+            </p>
 
+            <!-- GALERIA (todos os itens dentro da grid) -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-container">
+
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
-                    <img src="exemplo.jpeg" alt="Plotagem" class="w-full h-64 object-cover">
+                    <img src="imagens/1.jpg" alt="Plotagem" class="w-full h-64 object-cover">
                     <div class="gallery-overlay">
                         <h3 class="font-bold text-lg">Plotagem em Grande Formato</h3>
                         <p class="text-sm mt-2">Impressão de alta qualidade para fachadas</p>
@@ -617,7 +622,7 @@
                 </div>
 
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
-                    <img src="exemplo.jpeg" alt="Envelopamento Automotivo" class="w-full h-64 object-cover">
+                    <img src="imagens/2.jpg" alt="Envelopamento Automotivo" class="w-full h-64 object-cover">
                     <div class="gallery-overlay">
                         <h3 class="font-bold text-lg">Envelopamento Automotivo</h3>
                         <p class="text-sm mt-2">Personalização completa de veículos</p>
@@ -625,7 +630,7 @@
                 </div>
 
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
-                    <img src="exemplo.jpeg" alt="Fachada" class="w-full h-64 object-cover">
+                    <img src="imagens/3.jpg" alt="Fachada" class="w-full h-64 object-cover">
                     <div class="gallery-overlay">
                         <h3 class="font-bold text-lg">Fachada Comercial</h3>
                         <p class="text-sm mt-2">Transformação visual para empresas</p>
@@ -633,7 +638,7 @@
                 </div>
 
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
-                    <img src="exemplo.jpeg" alt="Luminoso" class="w-full h-64 object-cover">
+                    <img src="imagens/4.jpg" alt="Luminoso" class="w-full h-64 object-cover">
                     <div class="gallery-overlay">
                         <h3 class="font-bold text-lg">Letreiro Luminoso</h3>
                         <p class="text-sm mt-2">Destaque noturno para seu negócio</p>
@@ -641,7 +646,7 @@
                 </div>
 
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
-                    <img src="exemplo.jpeg" alt="Adesivos" class="w-full h-64 object-cover">
+                    <img src="imagens/5.jpg" alt="Adesivos" class="w-full h-64 object-cover">
                     <div class="gallery-overlay">
                         <h3 class="font-bold text-lg">Adesivos Personalizados</h3>
                         <p class="text-sm mt-2">Soluções criativas para identificação</p>
@@ -649,20 +654,48 @@
                 </div>
 
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
-                    <img src="exemplo.jpeg" alt="Cartões" class="w-full h-64 object-cover">
+                    <img src="imagens/6.jpg" alt="Cartões" class="w-full h-64 object-cover">
                     <div class="gallery-overlay">
                         <h3 class="font-bold text-lg">Cartões de Visita</h3>
                         <p class="text-sm mt-2">Design profissional para sua marca</p>
                     </div>
                 </div>
-            </div>
 
-            <div class="text-center mt-12" data-aos="fade-up">
-                <a href="#contato"
-                    class="bg-black hover:bg-gray-800 text-white py-3 px-8 rounded-lg font-medium transition duration-300 btn-primary text-lg">
-                    <i class="fas fa-images mr-2"></i> Ver Mais Trabalhos
-                </a>
+                <!-- ITENS QUE ESTAVAM FORA DA GRID (agora corrigidos) -->
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
+                    <img src="imagens/7.jpg" alt="Fachada" class="w-full h-64 object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="font-bold text-lg">Fachada Comercial</h3>
+                        <p class="text-sm mt-2">Transformação visual para empresas</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
+                    <img src="imagens/8.jpg" alt="Luminoso" class="w-full h-64 object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="font-bold text-lg">Letreiro Luminoso</h3>
+                        <p class="text-sm mt-2">Destaque noturno para seu negócio</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
+                    <img src="imagens/9.jpg" alt="Adesivos" class="w-full h-64 object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="font-bold text-lg">Adesivos Personalizados</h3>
+                        <p class="text-sm mt-2">Soluções criativas para identificação</p>
+                    </div>
+                </div>
+
             </div>
+        </div>
+
+
+        <div class="text-center mt-12" data-aos="fade-up">
+            <a href="#contato"
+                class="bg-black hover:bg-gray-800 text-white py-3 px-8 rounded-lg font-medium transition duration-300 btn-primary text-lg">
+                <i class="fas fa-images mr-2"></i> Ver Mais Trabalhos
+            </a>
+        </div>
         </div>
     </section>
 
@@ -676,8 +709,9 @@
                 alguns exemplos dos nossos trabalhos realizados com excelência e qualidade</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-container">
+
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
-                    <img src="exemplo.jpeg" alt="Plotagem" class="w-full h-64 object-cover">
+                    <img src="imagens/10.jpg" alt="Plotagem" class="w-full h-64 object-cover">
                     <div class="gallery-overlay">
                         <h3 class="font-bold text-lg">Plotagem em Grande Formato</h3>
                         <p class="text-sm mt-2">Impressão de alta qualidade para fachadas</p>
@@ -685,7 +719,7 @@
                 </div>
 
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
-                    <img src="exemplo.jpeg" alt="Envelopamento Automotivo" class="w-full h-64 object-cover">
+                    <img src="imagens/11.jpg" alt="Envelopamento Automotivo" class="w-full h-64 object-cover">
                     <div class="gallery-overlay">
                         <h3 class="font-bold text-lg">Envelopamento Automotivo</h3>
                         <p class="text-sm mt-2">Personalização completa de veículos</p>
@@ -693,7 +727,7 @@
                 </div>
 
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
-                    <img src="exemplo.jpeg" alt="Fachada" class="w-full h-64 object-cover">
+                    <img src="imagens/12.jpg" alt="Fachada" class="w-full h-64 object-cover">
                     <div class="gallery-overlay">
                         <h3 class="font-bold text-lg">Fachada Comercial</h3>
                         <p class="text-sm mt-2">Transformação visual para empresas</p>
@@ -701,7 +735,7 @@
                 </div>
 
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
-                    <img src="exemplo.jpeg" alt="Luminoso" class="w-full h-64 object-cover">
+                    <img src="imagens/13.jpg" alt="Luminoso" class="w-full h-64 object-cover">
                     <div class="gallery-overlay">
                         <h3 class="font-bold text-lg">Letreiro Luminoso</h3>
                         <p class="text-sm mt-2">Destaque noturno para seu negócio</p>
@@ -709,7 +743,7 @@
                 </div>
 
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
-                    <img src="exemplo.jpeg" alt="Adesivos" class="w-full h-64 object-cover">
+                    <img src="imagens/14.jpg" alt="Adesivos" class="w-full h-64 object-cover">
                     <div class="gallery-overlay">
                         <h3 class="font-bold text-lg">Adesivos Personalizados</h3>
                         <p class="text-sm mt-2">Soluções criativas para identificação</p>
@@ -717,13 +751,39 @@
                 </div>
 
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
-                    <img src="exemplo.jpeg" alt="Cartões" class="w-full h-64 object-cover">
+                    <img src="imagens/15.jpg" alt="Cartões" class="w-full h-64 object-cover">
                     <div class="gallery-overlay">
                         <h3 class="font-bold text-lg">Cartões de Visita</h3>
                         <p class="text-sm mt-2">Design profissional para sua marca</p>
                     </div>
                 </div>
+
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
+                    <img src="imagens/16.jpg" alt="Cartões" class="w-full h-64 object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="font-bold text-lg">Cartões de Visita</h3>
+                        <p class="text-sm mt-2">Design profissional para sua marca</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
+                    <img src="imagens/17.jpg" alt="Cartões" class="w-full h-64 object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="font-bold text-lg">Cartões de Visita</h3>
+                        <p class="text-sm mt-2">Design profissional para sua marca</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
+                    <img src="imagens/18.jpg" alt="Cartões" class="w-full h-64 object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="font-bold text-lg">Cartões de Visita</h3>
+                        <p class="text-sm mt-2">Design profissional para sua marca</p>
+                    </div>
+                </div>
+
             </div>
+
 
             <div class="text-center mt-12" data-aos="fade-up">
                 <a href="#contato"
